@@ -1,0 +1,78 @@
+/* ============================================
+   FAQ PAGE
+   ============================================ */
+
+.faq-page {
+  padding-top: calc(var(--header-height) + 60px);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.faq-item {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  font-family: var(--font-heading);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  transition: color var(--transition-fast);
+  gap: var(--space-4);
+}
+
+.faq-question:hover {
+  color: var(--primary);
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+  color: var(--text-muted);
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 var(--space-6);
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 var(--space-6) var(--space-5);
+}
+
+.faq-answer p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.7;
+}

@@ -1,0 +1,157 @@
+/* ============================================
+   DEPARTMENTS PAGE
+   ============================================ */
+
+.departments-page {
+  padding-top: calc(var(--header-height) + 60px);
+}
+
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-6);
+}
+
+.department-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.department-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.department-card-header {
+  padding: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.department-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: rgba(6,182,212,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+.department-card:hover .department-icon {
+  background: var(--gradient-primary);
+  transform: scale(1.05);
+}
+
+.department-card:hover .department-icon span {
+  filter: brightness(10);
+}
+
+.department-header-text h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-2);
+}
+
+.department-header-text p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Hover-reveal test list */
+.department-tests {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 var(--space-6);
+  background: var(--surface);
+  border-top: 0 solid var(--border-light);
+}
+
+.department-card:hover .department-tests,
+.department-card:focus-within .department-tests {
+  max-height: 300px;
+  padding: var(--space-4) var(--space-6);
+  border-top-width: 1px;
+}
+
+.department-tests h5 {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: var(--space-3);
+}
+
+.department-tests ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1) var(--space-4);
+}
+
+.department-tests li {
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+  padding: var(--space-1) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.department-tests li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  flex-shrink: 0;
+}
+
+.department-card-footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.department-doctor-count {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.department-link {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: gap var(--transition-fast);
+}
+
+.department-link:hover {
+  gap: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .departments-grid {
+    grid-template-columns: 1fr;
+  }
+  .department-tests ul {
+    grid-template-columns: 1fr;
+  }
+}
