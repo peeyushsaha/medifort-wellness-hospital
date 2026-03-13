@@ -3,42 +3,54 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const config = require('./config');
+const { initDb } = require('./db/database');
 
-const app = express();
+async function startServer() {
+  // Initialize database before starting the server
+  await initDb();
+  console.log('✅ Database initialized');
 
-/* --- Middleware --- */
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+  const app = express();
 
-/* --- API Routes --- */
-app.use('/api', require('./routes/public'));
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/appointments', require('./routes/appointments'));
-app.use('/api/contacts', require('./routes/contacts'));
-app.use('/api/admin', require('./routes/admin'));
+  /* --- Middleware --- */
+  app.use(cors());
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
-/* --- Serve admin panel --- */
-app.use('/admin', express.static(path.join(__dirname, 'admin')));
+  /* --- API Routes --- */
+  app.use('/api', require('./routes/public'));
+  app.use('/api/auth', require('./routes/auth'));
+  app.use('/api/appointments', require('./routes/appointments'));
+  app.use('/api/contacts', require('./routes/contacts'));
+  app.use('/api/admin', require('./routes/admin'));
 
-/* --- Serve frontend static files --- */
-app.use(express.static(path.join(__dirname, '..')));
+  /* --- Serve admin panel --- */
+  app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
-/* --- Catch-all: serve index.html for SPA --- */
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
-});
+  /* --- Serve frontend static files --- */
+  app.use(express.static(path.join(__dirname, '..')));
 
-/* --- Error handler --- */
-app.use((err, req, res, next) => {
-  console.error('Server error:', err);
-  res.status(500).json({ error: 'Internal server error.' });
-});
+  /* --- Catch-all: serve index.html for SPA --- */
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
+  });
 
-/* --- Start server --- */
-app.listen(config.PORT, () => {
-  console.log(`\n🏥 Medifort Wellness Hospital Server`);
-  console.log(`   Frontend:  http://localhost:${config.PORT}`);
-  console.log(`   Admin:     http://localhost:${config.PORT}/admin`);
-  console.log(`   API:       http://localhost:${config.PORT}/api\n`);
+  /* --- Error handler --- */
+  app.use((err, req, res, next) => {
+    console.error('Server error:', err);
+    res.status(500).json({ error: 'Internal server error.' });
+  });
+
+  /* --- Start server --- */
+  app.listen(config.PORT, () => {
+    console.log(`\n🏥 Medifort Wellness Hospital Server`);
+    console.log(`   Frontend:  http://localhost:${config.PORT}`);
+    console.log(`   Admin:     http://localhost:${config.PORT}/admin`);
+    console.log(`   API:       http://localhost:${config.PORT}/api\n`);
+  });
+}
+
+startServer().catch(err => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
 });
