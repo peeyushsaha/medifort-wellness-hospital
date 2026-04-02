@@ -203,3 +203,79 @@
     min-width: unset;
   }
 }
+
+@media (max-width: 480px) {
+  .doctors-page {
+    padding-top: calc(64px + 32px);
+  }
+  .doctor-card-image {
+    height: 160px;
+  }
+  .doctor-card-body {
+    padding: var(--space-4);
+  }
+  .filter-select {
+    width: 100%;
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .doctors-page {
+    padding-top: calc(60px + 24px);
+  }
+  .doctor-card-image {
+    height: 140px;
+  }
+  .doctor-name {
+    font-size: var(--fs-base);
+  }
+  .doctor-specialty {
+    font-size: var(--fs-xs);
+  }
+  .doctor-card-body {
+    padding: var(--space-3);
+  }
+  .filter-search input {
+    font-size: var(--fs-xs);
+  }
+  .filter-select {
+    font-size: var(--fs-xs);
+    padding: var(--space-2) var(--space-4);
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .doctor-card-image {
+    height: 120px;
+  }
+  .doctor-qualifications {
+    font-size: 0.65rem;
+  }
+  .doctor-book-btn {
+    font-size: 0.65rem;
+    padding: var(--space-1) var(--space-2);
+  }
+}
+
+/* 320px: iPhone SE */
+@media (max-width: 320px) {
+  .doctors-page {
+    padding-top: calc(56px + 16px);
+  }
+  .doctors-grid {
+    grid-template-columns: 1fr;
+  }
+  .doctor-card-image {
+    height: 100px;
+  }
+  .doctor-name {
+    font-size: var(--fs-sm);
+  }
+  .doctor-meta {
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: flex-start;
+  }
+}

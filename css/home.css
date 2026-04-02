@@ -390,6 +390,28 @@
   }
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-12) 0;
+  }
+  .trust-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-banner {
+    padding: var(--space-10) 0;
+  }
+  .cta-banner h2 {
+    font-size: var(--fs-2xl);
+  }
+}
+
 @media (max-width: 640px) {
   .trust-items {
     grid-template-columns: 1fr;
@@ -399,5 +421,128 @@
   }
   .testimonial-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-10) 0;
+  }
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+  .service-preview-card {
+    padding: var(--space-5);
+  }
+  .testimonial-card {
+    padding: var(--space-5);
+  }
+  .trust-bar {
+    padding: var(--space-5) 0;
+  }
+  .trust-item {
+    padding: var(--space-3);
+  }
+  .cta-banner h2 {
+    font-size: var(--fs-xl);
+  }
+  .cta-banner p {
+    font-size: var(--fs-sm);
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .trust-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+  .service-preview-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.375rem;
+  }
+  .service-preview-card h3 {
+    font-size: var(--fs-base);
+  }
+  .testimonial-card {
+    padding: var(--space-4);
+  }
+  .testimonial-text {
+    font-size: var(--fs-xs);
+  }
+  .why-us-floating-card {
+    bottom: -10px;
+    right: -10px;
+    padding: var(--space-3);
+  }
+  .why-us-floating-card .number {
+    font-size: var(--fs-xl);
+  }
+  .cta-banner h2 {
+    font-size: var(--fs-lg);
+  }
+  .cta-banner p {
+    font-size: var(--fs-xs);
+    margin-bottom: var(--space-5);
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .trust-text h4 {
+    font-size: var(--fs-xs);
+  }
+  .trust-text p {
+    font-size: 0.6875rem;
+  }
+  .service-preview-card {
+    padding: var(--space-4);
+  }
+  .service-preview-card p {
+    font-size: var(--fs-xs);
+  }
+  .why-us-item-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* 320px: iPhone SE, smallest phones */
+@media (max-width: 320px) {
+  .trust-bar {
+    padding: var(--space-3) 0;
+  }
+  .trust-item {
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+  .trust-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .service-preview-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+    margin-bottom: var(--space-3);
+  }
+  .service-preview-card h3 {
+    font-size: var(--fs-sm);
+    margin-bottom: var(--space-2);
+  }
+  .testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: var(--fs-xs);
+  }
+  .cta-banner {
+    padding: var(--space-6) 0;
+  }
+  .cta-banner h2 {
+    font-size: var(--fs-base);
   }
 }

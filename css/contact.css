@@ -95,3 +95,67 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding-top: calc(64px + 32px);
+  }
+  .contact-card {
+    padding: var(--space-4);
+  }
+  .contact-form-card {
+    padding: var(--space-5);
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .contact-page {
+    padding-top: calc(60px + 24px);
+  }
+  .contact-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .contact-card h4 {
+    font-size: var(--fs-xs);
+  }
+  .contact-card p, .contact-card a {
+    font-size: var(--fs-xs);
+  }
+  .contact-form-card {
+    padding: var(--space-4);
+  }
+  .contact-form-card h3 {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .contact-card {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+  .contact-map {
+    aspect-ratio: 4/3;
+  }
+}
+
+/* 320px: iPhone SE */
+@media (max-width: 320px) {
+  .contact-page {
+    padding-top: calc(56px + 16px);
+  }
+  .contact-card-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .contact-form-card {
+    padding: var(--space-3);
+  }
+  .contact-form-card h3 {
+    font-size: var(--fs-base);
+    margin-bottom: var(--space-4);
+  }
+}

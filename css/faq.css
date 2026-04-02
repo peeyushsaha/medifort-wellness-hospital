@@ -76,3 +76,63 @@
   color: var(--text-muted);
   line-height: 1.7;
 }
+
+@media (max-width: 480px) {
+  .faq-page {
+    padding-top: calc(64px + 32px);
+  }
+  .faq-question {
+    padding: var(--space-4) var(--space-4);
+    font-size: var(--fs-sm);
+  }
+  .faq-item.open .faq-answer {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .faq-page {
+    padding-top: calc(60px + 24px);
+  }
+  .faq-question {
+    font-size: var(--fs-sm);
+    padding: var(--space-3) var(--space-3);
+    gap: var(--space-3);
+  }
+  .faq-answer p {
+    font-size: var(--fs-xs);
+  }
+  .faq-chevron {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .faq-list {
+    gap: var(--space-3);
+  }
+  .faq-question {
+    font-size: var(--fs-xs);
+  }
+}
+
+/* 320px: iPhone SE */
+@media (max-width: 320px) {
+  .faq-page {
+    padding-top: calc(56px + 16px);
+  }
+  .faq-question {
+    padding: var(--space-2) var(--space-2);
+    font-size: var(--fs-xs);
+  }
+  .faq-item.open .faq-answer {
+    padding: 0 var(--space-2) var(--space-3);
+  }
+  .faq-answer p {
+    font-size: 0.6875rem;
+    line-height: 1.6;
+  }
+}

@@ -2,16 +2,27 @@
    APP — Main entry point
    ============================================ */
 
-(async function () {
+(function () {
   'use strict';
 
-  /* --- Load data from API (or fallback to hardcoded) --- */
-  await loadAllData();
+  /* --- Load data from API in background (fallback data used immediately) --- */
+  loadAllData();
 
   const mainContent = document.getElementById('main-content');
-
+  
   /* --- Render a page by name --- */
   function renderPage(pageName) {
+    const staticHero = document.getElementById('home-hero-static');
+    if (staticHero) {
+      staticHero.style.display = (pageName === 'home') ? 'block' : 'none';
+      if (pageName === 'home') {
+        // Trigger reveal manually for static hero since it's not dynamically created
+        setTimeout(() => {
+          document.querySelectorAll('.hero-card').forEach(el => el.classList.add('revealed'));
+        }, 300);
+      }
+    }
+
     const renderer = Pages[pageName];
     if (!renderer) {
       mainContent.innerHTML = `<div class="container section"><h1>Page Not Found</h1><p>The page "${pageName}" doesn't exist.</p></div>`;
@@ -23,6 +34,8 @@
     // Post-render setup
     requestAnimationFrame(() => {
       Components.initScrollReveal();
+      Components.initParallax();
+      Components.initCounterAnimation();
 
       if (pageName === 'doctors') {
         setupDoctorFilters();

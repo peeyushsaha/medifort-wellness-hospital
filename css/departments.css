@@ -147,11 +147,77 @@
   gap: var(--space-2);
 }
 
+@media (max-width: 768px) {
+  .departments-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .departments-grid {
     grid-template-columns: 1fr;
   }
   .department-tests ul {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .departments-page {
+    padding-top: calc(64px + 32px);
+  }
+  .department-card-header {
+    padding: var(--space-4);
+  }
+  .department-card-footer {
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .departments-page {
+    padding-top: calc(60px + 24px);
+  }
+  .department-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.375rem;
+  }
+  .department-header-text h3 {
+    font-size: var(--fs-base);
+  }
+  .department-header-text p {
+    font-size: var(--fs-xs);
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .department-card-header {
+    gap: var(--space-3);
+  }
+  .department-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+}
+
+/* 320px: iPhone SE */
+@media (max-width: 320px) {
+  .departments-page {
+    padding-top: calc(56px + 16px);
+  }
+  .department-card-header {
+    padding: var(--space-3);
+    flex-direction: column;
+  }
+  .department-card-footer {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--fs-xs);
+  }
+  .department-link {
+    font-size: 0.65rem;
   }
 }

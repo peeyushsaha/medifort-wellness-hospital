@@ -17,14 +17,14 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 80%, rgba(6,182,212,0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(245,158,11,0.08) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(6,182,212,0.05) 0%, transparent 60%);
+    radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
 /* Animated floating shapes */
-.hero-bg-shapes {
+s .hero-bg-shapes {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -39,23 +39,34 @@
 }
 
 .hero-shape:nth-child(1) {
-  width: 400px; height: 400px;
-  top: -100px; right: -100px;
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
   animation: float 8s ease-in-out infinite;
 }
+
 .hero-shape:nth-child(2) {
-  width: 250px; height: 250px;
-  bottom: -50px; left: 10%;
+  width: 250px;
+  height: 250px;
+  bottom: -50px;
+  left: 10%;
   animation: float 10s ease-in-out infinite 1s;
 }
+
 .hero-shape:nth-child(3) {
-  width: 150px; height: 150px;
-  top: 30%; left: 5%;
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  left: 5%;
   animation: float 7s ease-in-out infinite 2s;
 }
+
 .hero-shape:nth-child(4) {
-  width: 100px; height: 100px;
-  bottom: 20%; right: 15%;
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  right: 15%;
   animation: float 9s ease-in-out infinite 0.5s;
 }
 
@@ -77,9 +88,9 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
   color: var(--primary-lighter);
@@ -112,7 +123,7 @@
 
 .hero-description {
   font-size: var(--fs-lg);
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: var(--space-8);
   max-width: 520px;
   line-height: 1.7;
@@ -144,7 +155,7 @@
 
 .hero-stat-label {
   font-size: var(--fs-xs);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   margin-top: var(--space-1);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -160,75 +171,100 @@
 }
 
 .hero-card-stack {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
   max-width: 440px;
-  aspect-ratio: 4/3;
 }
 
 .hero-card {
-  position: absolute;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.15);
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
-  padding: var(--space-5);
+  padding: var(--space-5) var(--space-6);
   color: #fff;
-  transition: transform var(--transition-slow);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+  cursor: default;
 }
 
 .hero-card:hover {
-  transform: translateY(-5px) scale(1.02);
+  transform: translateX(8px) translateY(-2px);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .hero-card-1 {
-  top: 0; left: 0;
-  width: 75%;
-  z-index: 3;
-  animation: slideInRight 0.8s ease 0.5s both;
+  margin-left: 0;
+  animation: slideInRight 0.6s ease 0.5s both;
 }
 
 .hero-card-2 {
-  top: 25%; right: 0;
-  width: 65%;
-  z-index: 2;
-  animation: slideInRight 0.8s ease 0.7s both;
+  margin-left: 32px;
+  animation: slideInRight 0.6s ease 0.7s both;
 }
 
 .hero-card-3 {
-  bottom: 0; left: 10%;
-  width: 70%;
-  z-index: 1;
-  animation: slideInRight 0.8s ease 0.9s both;
+  margin-left: 16px;
+  animation: slideInRight 0.6s ease 0.9s both;
 }
 
 .hero-card-icon {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
   border-radius: var(--radius-md);
-  background: rgba(255,255,255,0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-3);
   font-size: 1.5rem;
+}
+
+.hero-card-1 .hero-card-icon {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(239, 68, 68, 0.08));
+}
+
+.hero-card-2 .hero-card-icon {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(59, 130, 246, 0.08));
+}
+
+.hero-card-3 .hero-card-icon {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(16, 185, 129, 0.08));
+}
+
+.hero-card-info {
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-card-title {
   font-family: var(--font-heading);
   font-size: var(--fs-base);
   font-weight: 700;
-  margin-bottom: var(--space-1);
+  margin-bottom: 2px;
 }
 
 .hero-card-text {
   font-size: var(--fs-xs);
-  opacity: 0.7;
+  opacity: 0.65;
   line-height: 1.5;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
+
+/* 1024px: iPad landscape, iPad Pro 12.9" portrait */
 @media (max-width: 1024px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -248,6 +284,30 @@
   }
 }
 
+/* 912px: Surface Pro 7 portrait */
+@media (max-width: 912px) {
+  .hero {
+    min-height: 88vh;
+    padding-top: calc(70px + 40px);
+  }
+}
+
+/* 768px: iPad Mini, iPad portrait */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+    padding-top: calc(70px + 32px);
+  }
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  .hero-description {
+    font-size: var(--fs-base);
+    max-width: 480px;
+  }
+}
+
+/* 640px */
 @media (max-width: 640px) {
   .hero {
     min-height: 85vh;
@@ -255,9 +315,144 @@
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    gap: var(--space-3);
   }
   .hero-stats {
     gap: var(--space-6);
     flex-wrap: wrap;
+  }
+}
+
+/* 600px: Kindle Fire, Nexus 7, small tablets */
+@media (max-width: 600px) {
+  .hero {
+    padding-top: calc(64px + 28px);
+  }
+  .hero-title {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+  .hero-badge {
+    font-size: var(--fs-xs);
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* 480px: Large phones (iPhone Pro Max, Galaxy S Ultra) */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 80vh;
+    padding-top: calc(64px + 24px);
+  }
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+  .hero-description {
+    font-size: var(--fs-sm);
+    max-width: 100%;
+  }
+  .hero-badge {
+    font-size: var(--fs-xs);
+    padding: var(--space-1) var(--space-3);
+  }
+  .hero-stat-number {
+    font-size: var(--fs-2xl);
+  }
+  .hero-stats {
+    gap: var(--space-4);
+  }
+  .btn-lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--fs-sm);
+  }
+}
+
+/* 414px: iPhone 6+/7+/8+, iPhone XR/11 */
+@media (max-width: 414px) {
+  .hero-stat-label {
+    font-size: 0.625rem;
+  }
+}
+
+/* 375px: iPhone 6/7/8/X/11/12/13 (standard) */
+@media (max-width: 375px) {
+  .hero {
+    min-height: 78vh;
+    padding-top: calc(60px + 20px);
+  }
+  .hero-title {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    margin-bottom: var(--space-4);
+  }
+  .hero-description {
+    margin-bottom: var(--space-5);
+    line-height: 1.6;
+  }
+  .hero-stat-number {
+    font-size: var(--fs-xl);
+  }
+  .hero-actions {
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* 360px: Galaxy S8-S23, Pixel 3/4 */
+@media (max-width: 360px) {
+  .hero {
+    min-height: 75vh;
+  }
+  .hero-title {
+    font-size: clamp(1.375rem, 8vw, 1.75rem);
+  }
+  .hero-badge {
+    padding: 2px var(--space-2);
+    font-size: 0.65rem;
+  }
+  .hero-stat-number {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* 320px: iPhone SE (all gens), iPhone 5/5S, Galaxy S5 */
+@media (max-width: 320px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(56px + 16px);
+    padding-bottom: var(--space-8);
+  }
+  .hero-title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-3);
+  }
+  .hero-description {
+    font-size: var(--fs-xs);
+    margin-bottom: var(--space-4);
+  }
+  .hero-stat-number {
+    font-size: var(--fs-base);
+  }
+  .hero-stat-label {
+    font-size: 0.55rem;
+  }
+  .hero-badge {
+    font-size: 0.6rem;
+  }
+  .hero-actions {
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: var(--space-6);
+  }
+  .hero-title {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+  .hero-stats {
+    gap: var(--space-3);
   }
 }

@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const compression = require('compression');
 const cors = require('cors');
 const path = require('path');
 const config = require('./config');
@@ -13,6 +14,7 @@ async function startServer() {
   const app = express();
 
   /* --- Middleware --- */
+  app.use(compression());           // gzip/brotli compression
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
@@ -27,8 +29,17 @@ async function startServer() {
   /* --- Serve admin panel --- */
   app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
-  /* --- Serve frontend static files --- */
-  app.use(express.static(path.join(__dirname, '..')));
+  /* --- Serve frontend static files with cache headers --- */
+  app.use(express.static(path.join(__dirname, '..'), {
+    maxAge: '1y',
+    immutable: true,
+    setHeaders(res, filePath) {
+      // HTML should not be aggressively cached
+      if (filePath.endsWith('.html')) {
+        res.setHeader('Cache-Control', 'no-cache');
+      }
+    }
+  }));
 
   /* --- Catch-all: serve index.html for SPA --- */
   app.get('*', (req, res) => {

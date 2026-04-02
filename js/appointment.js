@@ -335,13 +335,13 @@ const AppointmentEngine = {
     const tabForm = document.getElementById('tab-form');
 
     if (tab === 'chat') {
-      if (chatContainer) chatContainer.style.display = '';
+      if (chatContainer) chatContainer.style.display = 'flex';
       if (formContainer) formContainer.style.display = 'none';
       if (tabChat) tabChat.classList.add('active');
       if (tabForm) tabForm.classList.remove('active');
     } else {
       if (chatContainer) chatContainer.style.display = 'none';
-      if (formContainer) formContainer.style.display = '';
+      if (formContainer) formContainer.style.display = 'block';
       if (tabChat) tabChat.classList.remove('active');
       if (tabForm) tabForm.classList.add('active');
     }

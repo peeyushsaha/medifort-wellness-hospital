@@ -79,6 +79,7 @@
   margin-bottom: var(--space-4);
   position: relative;
   padding-bottom: var(--space-3);
+  width: fit-content;
 }
 
 .footer-col h4::after {
@@ -86,7 +87,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30px;
+  width: 100%;
   height: 2px;
   background: var(--gradient-accent);
   border-radius: 1px;
@@ -163,5 +164,99 @@
     flex-direction: column;
     gap: var(--space-3);
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-wave {
+    height: 60px;
+  }
+  .footer-body {
+    padding-top: var(--space-8);
+  }
+  .footer-grid {
+    gap: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+  .footer-about p {
+    font-size: var(--fs-xs);
+  }
+  .footer-col h4 {
+    font-size: var(--fs-sm);
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .footer-wave {
+    height: 50px;
+  }
+  .footer-grid {
+    gap: var(--space-5);
+  }
+  .footer-socials a {
+    width: 34px;
+    height: 34px;
+  }
+  .footer-col ul li a {
+    font-size: var(--fs-xs);
+  }
+  .footer-contact-list li {
+    font-size: var(--fs-xs);
+  }
+  .footer-bottom {
+    padding: var(--space-4) 0;
+  }
+  .footer-bottom-links {
+    gap: var(--space-3);
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .footer-logo span {
+    font-size: var(--fs-base);
+  }
+  .footer-body {
+    padding-top: var(--space-6);
+  }
+}
+
+/* 320px: iPhone SE */
+@media (max-width: 320px) {
+  .footer-wave {
+    height: 40px;
+  }
+  .footer-grid {
+    gap: var(--space-4);
+    padding-bottom: var(--space-4);
+  }
+  .footer-logo svg {
+    width: 24px;
+    height: 24px;
+  }
+  .footer-logo span {
+    font-size: var(--fs-sm);
+  }
+  .footer-socials a {
+    width: 30px;
+    height: 30px;
+  }
+  .footer-col h4 {
+    font-size: var(--fs-xs);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+  .footer-col ul li a {
+    font-size: 0.6875rem;
+  }
+  .footer-bottom {
+    padding: var(--space-3) 0;
+  }
+  .footer-bottom p {
+    font-size: 0.6rem;
+  }
+  .footer-bottom-links a {
+    font-size: 0.6rem;
   }
 }

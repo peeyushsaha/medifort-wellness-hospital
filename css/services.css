@@ -97,8 +97,78 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .services-full-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .services-full-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page {
+    padding-top: calc(64px + 32px);
+  }
+  .service-full-card {
+    padding: var(--space-5);
+  }
+  .service-full-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .services-page {
+    padding-top: calc(60px + 24px);
+  }
+  .service-full-card {
+    padding: var(--space-4);
+  }
+  .service-full-card h3 {
+    font-size: var(--fs-lg);
+  }
+  .service-full-card p {
+    font-size: var(--fs-xs);
+  }
+  .service-full-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.375rem;
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .service-feature {
+    font-size: 0.65rem;
+  }
+  .service-full-card h3 {
+    font-size: var(--fs-base);
+  }
+}
+
+/* 320px: iPhone SE */
+@media (max-width: 320px) {
+  .services-page {
+    padding-top: calc(56px + 16px);
+  }
+  .service-full-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.125rem;
+    margin-bottom: var(--space-3);
+  }
+  .service-full-card h3 {
+    font-size: var(--fs-sm);
+  }
+  .service-features {
+    gap: var(--space-1);
   }
 }

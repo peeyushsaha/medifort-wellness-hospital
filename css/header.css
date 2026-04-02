@@ -209,7 +209,7 @@
   transform: rotate(-45deg);
 }
 
-/* Mobile nav */
+/* Mobile nav — tablets and below */
 @media (max-width: 1024px) {
   .nav-toggle {
     display: flex;
@@ -240,6 +240,9 @@
     padding: var(--space-3) var(--space-4);
     width: 100%;
     border-radius: var(--radius-md);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   .nav-link::after {
@@ -261,11 +264,114 @@
   }
 }
 
-@media (max-width: 640px) {
+/* 834px: iPad Pro 11" portrait — hide email */
+@media (max-width: 834px) {
   .header-contact-strip {
     gap: var(--space-3);
   }
+  .header-contact-item:nth-child(2) {
+    display: none;
+  }
+}
+
+/* 768px: iPad Mini, iPad portrait — hide top bar */
+@media (max-width: 768px) {
+  .header-top-bar {
+    display: none;
+  }
+  .header-main-inner {
+    height: 70px;
+  }
+  .nav-links {
+    padding-top: calc(70px + var(--space-6));
+  }
+}
+
+/* 640px */
+@media (max-width: 640px) {
   .header-top-actions {
     display: none;
+  }
+}
+
+/* 600px: Kindle Fire, Nexus 7, small tablets */
+@media (max-width: 600px) {
+  .header-main-inner {
+    height: 64px;
+  }
+  .logo-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+  .nav-links {
+    padding-top: calc(64px + var(--space-6));
+    width: min(280px, 80vw);
+  }
+}
+
+/* 480px: Large phones */
+@media (max-width: 480px) {
+  .logo-name {
+    font-size: var(--fs-base);
+  }
+  .logo-tagline {
+    font-size: 0.65rem;
+  }
+}
+
+/* 375px: iPhone standard */
+@media (max-width: 375px) {
+  .header-main-inner {
+    height: 60px;
+  }
+  .logo-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  .logo-name {
+    font-size: var(--fs-sm);
+  }
+  .logo-tagline {
+    font-size: 0.6rem;
+  }
+  .nav-links {
+    padding-top: calc(60px + var(--space-6));
+    width: min(260px, 80vw);
+  }
+  .nav-link {
+    font-size: var(--fs-sm);
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* 360px: Galaxy S series */
+@media (max-width: 360px) {
+  .logo {
+    gap: var(--space-2);
+  }
+  .logo-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* 320px: iPhone SE, smallest phones */
+@media (max-width: 320px) {
+  .header-main-inner {
+    height: 56px;
+    padding: 0;
+  }
+  .logo-name {
+    font-size: var(--fs-xs);
+  }
+  .logo-tagline {
+    display: none;
+  }
+  .nav-links {
+    padding-top: calc(56px + var(--space-4));
+    width: min(240px, 85vw);
+  }
+  .nav-link {
+    font-size: var(--fs-xs);
   }
 }

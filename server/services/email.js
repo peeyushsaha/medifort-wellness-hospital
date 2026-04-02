@@ -48,7 +48,7 @@ async function sendAppointmentConfirmation(appointment) {
               <tr><td style="padding: 8px 0; color: #64748b;">Time</td><td style="padding: 8px 0; font-weight: 600;">${appointment.preferred_time || 'To be confirmed'}</td></tr>
               <tr><td style="padding: 8px 0; color: #64748b;">Status</td><td style="padding: 8px 0; font-weight: 600; color: #f59e0b;">Pending Confirmation</td></tr>
             </table>
-            <p style="margin-top: 24px; color: #64748b; font-size: 14px;">Our team will contact you shortly to confirm your appointment. For any queries, call <strong>+91-11-4567-8900</strong>.</p>
+            <p style="margin-top: 24px; color: #64748b; font-size: 14px;">Our team will contact you shortly to confirm your appointment. For any queries, call <strong>+91 76314 32007 / +91 89359 66820</strong>.</p>
           </div>
           <div style="background: #0f172a; padding: 16px; text-align: center; color: rgba(255,255,255,0.6); font-size: 12px;">
             © 2026 Medifort Wellness Hospital Pvt Ltd. All rights reserved.

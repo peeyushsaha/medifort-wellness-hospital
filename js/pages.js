@@ -8,78 +8,6 @@ const Pages = {
   home() {
     return `
       <div class="page-content">
-        <!-- HERO -->
-        <section class="hero" aria-label="Welcome">
-          <div class="hero-bg-shapes">
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
-          </div>
-          <div class="container hero-inner">
-            <div class="hero-content">
-              <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                Welcome to Medifort Wellness
-              </div>
-              <h1 class="hero-title">
-                Advanced Healthcare,<br/>
-                <span class="hero-title-accent">Compassionate Care</span>
-              </h1>
-              <p class="hero-description">
-                Experience world-class medical excellence with a team of dedicated specialists,
-                cutting-edge technology, and a patient-first approach to healing.
-              </p>
-              <div class="hero-actions">
-                <a href="#" class="btn btn-accent btn-lg" data-page="appointment">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-                  Book Appointment
-                </a>
-                <a href="#" class="btn btn-outline btn-lg" data-page="departments">
-                  Explore Departments
-                </a>
-              </div>
-              <div class="hero-stats">
-                <div class="hero-stat">
-                  <div class="hero-stat-number" data-count="20">20+</div>
-                  <div class="hero-stat-label">Years of Excellence</div>
-                </div>
-                <div class="hero-stat">
-                  <div class="hero-stat-number" data-count="150">150+</div>
-                  <div class="hero-stat-label">Expert Doctors</div>
-                </div>
-                <div class="hero-stat">
-                  <div class="hero-stat-number" data-count="50000">50K+</div>
-                  <div class="hero-stat-label">Happy Patients</div>
-                </div>
-                <div class="hero-stat">
-                  <div class="hero-stat-number" data-count="30">30+</div>
-                  <div class="hero-stat-label">Specialties</div>
-                </div>
-              </div>
-            </div>
-            <div class="hero-visual">
-              <div class="hero-card-stack">
-                <div class="hero-card hero-card-1">
-                  <div class="hero-card-icon">🏥</div>
-                  <div class="hero-card-title">24/7 Emergency</div>
-                  <div class="hero-card-text">Round-the-clock emergency care with rapid response teams</div>
-                </div>
-                <div class="hero-card hero-card-2">
-                  <div class="hero-card-icon">🔬</div>
-                  <div class="hero-card-title">Advanced Diagnostics</div>
-                  <div class="hero-card-text">State-of-the-art imaging and lab facilities</div>
-                </div>
-                <div class="hero-card hero-card-3">
-                  <div class="hero-card-icon">💊</div>
-                  <div class="hero-card-title">Personalized Treatment</div>
-                  <div class="hero-card-text">Tailored care plans for every patient</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <!-- TRUST BAR -->
         <section class="trust-bar" aria-label="Trust indicators">
           <div class="container">
@@ -87,15 +15,15 @@ const Pages = {
               <div class="trust-item reveal">
                 <div class="trust-icon">🏆</div>
                 <div class="trust-text">
-                  <h4>NABH Accredited</h4>
-                  <p>National quality certification</p>
+                  <h4>Multi-Speciality</h4>
+                  <p>7 specialist departments</p>
                 </div>
               </div>
               <div class="trust-item reveal">
                 <div class="trust-icon">👨‍⚕️</div>
                 <div class="trust-text">
-                  <h4>150+ Specialists</h4>
-                  <p>Expert doctors across 30+ specialties</p>
+                  <h4>Expert Specialists</h4>
+                  <p>Experienced doctors across specialties</p>
                 </div>
               </div>
               <div class="trust-item reveal">
@@ -108,8 +36,8 @@ const Pages = {
               <div class="trust-item reveal">
                 <div class="trust-icon">💳</div>
                 <div class="trust-text">
-                  <h4>Cashless Insurance</h4>
-                  <p>All major insurers accepted</p>
+                  <h4>Insurance Support</h4>
+                  <p>Cashless claims & insurance assistance</p>
                 </div>
               </div>
             </div>
@@ -249,10 +177,10 @@ const Pages = {
           <div class="about-story">
             <div class="about-story-content reveal-left">
               <div class="section-label">Our Story</div>
-              <h2>A Legacy of Care Since 2005</h2>
-              <p>Medifort Wellness Hospital was founded with a singular vision — to make world-class healthcare accessible to every family. What began as a 50-bed facility has grown into a 500+ bed multi-specialty hospital serving over 50,000 patients annually.</p>
-              <p>Our commitment to clinical excellence, cutting-edge technology, and compassionate care has earned us NABH accreditation and the trust of families across the region.</p>
-              <p>Today, we stand as a beacon of medical innovation, housing advanced robotic surgery suites, a dedicated research wing, and one of the region's most respected cardiac care programs.</p>
+              <h2>A Mission for Complete Wellbeing</h2>
+              <p>Medifort Wellness Hospital is a 75-bed multi-speciality hospital established with a singular mission — to establish a healthy society through excellent delivery of the most advanced healthcare services and promote preventive healthcare awareness.</p>
+              <p>Our vision is a healthy society powered by initiatives that protect both the body and the mind. We combine modern facilities with advanced minimally invasive procedures to deliver the best patient outcomes.</p>
+              <p>Today, we are one of Bhagalpur's most trusted healthcare institutions, housing a fully equipped life-saving NICU, advanced diagnostic facilities, and specialist departments covering Cardiology, Pediatrics & Neonatology, Oncology, Gastroenterology, Nephrology, and more.</p>
             </div>
             <div class="about-story-visual reveal-right">
               <span class="placeholder-visual">🏥</span>
@@ -289,20 +217,20 @@ const Pages = {
           </div>
           <div class="milestones-grid">
             <div class="milestone-card reveal">
-              <div class="milestone-number">20+</div>
-              <div class="milestone-label">Years of Service</div>
-            </div>
-            <div class="milestone-card reveal">
-              <div class="milestone-number">500+</div>
+              <div class="milestone-number">75</div>
               <div class="milestone-label">Hospital Beds</div>
             </div>
             <div class="milestone-card reveal">
-              <div class="milestone-number">150+</div>
-              <div class="milestone-label">Expert Doctors</div>
+              <div class="milestone-number">7</div>
+              <div class="milestone-label">Specialist Departments</div>
             </div>
             <div class="milestone-card reveal">
-              <div class="milestone-number">50K+</div>
-              <div class="milestone-label">Patients Yearly</div>
+              <div class="milestone-number">50+</div>
+              <div class="milestone-label">Health Tests Available</div>
+            </div>
+            <div class="milestone-card reveal">
+              <div class="milestone-number">24/7</div>
+              <div class="milestone-label">Emergency Services</div>
             </div>
           </div>
         </div>
@@ -512,7 +440,7 @@ const Pages = {
                   Need Help?
                 </h4>
                 <p style="font-size:var(--fs-sm); opacity:0.85; margin-bottom:var(--space-3);">Prefer to book by phone? Call us anytime.</p>
-                <p style="font-size:var(--fs-xl); font-weight:700;">+91-11-4567-8900</p>
+                <p style="font-size:var(--fs-xl); font-weight:700;"><a href="tel:+917631432007" style="color:inherit; text-decoration:none;">+91 76314 32007</a> / <a href="tel:+918935966820" style="color:inherit; text-decoration:none;">+91 89359 66820</a></p>
               </div>
             </div>
           </div>
@@ -558,7 +486,7 @@ const Pages = {
                   </div>
                   <div>
                     <h4>Visit Us</h4>
-                    <p>123 Health Avenue, Medical District<br/>New Delhi, India 110001</p>
+                    <p><a href="https://maps.google.com/maps?q=Medifort+Wellness+Hospital,+Tilkamanjhi+Chowk,+Narayana+Colony,+Bhagalpur,+Bihar+812001" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Hotel Shishmahal Lane, Tilkamanjhi Chowk<br/>Narayana Colony, Bhagalpur, Bihar 812001</a></p>
                   </div>
                 </div>
                 <div class="contact-card reveal">
@@ -567,7 +495,7 @@ const Pages = {
                   </div>
                   <div>
                     <h4>Call Us</h4>
-                    <p>General: +91-11-4567-8900<br/>Emergency: +91-11-4567-8911</p>
+                    <p><a href="tel:+917631432007" style="color:inherit; text-decoration:none;">General: +91 76314 32007</a> / <a href="tel:+918935966820" style="color:inherit; text-decoration:none;">+91 89359 66820</a></p>
                   </div>
                 </div>
                 <div class="contact-card reveal">
@@ -576,7 +504,7 @@ const Pages = {
                   </div>
                   <div>
                     <h4>Email Us</h4>
-                    <p>General: info@medifortwellness.com<br/>Appointments: appointments@medifortwellness.com</p>
+                    <p><a href="https://mail.google.com/mail/?view=cm&to=info@medifortwellness.com" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">General: info@medifortwellness.com</a><br/><a href="https://mail.google.com/mail/?view=cm&to=appointments@medifortwellness.com" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;">Appointments: appointments@medifortwellness.com</a></p>
                   </div>
                 </div>
                 <div class="contact-card reveal">
@@ -585,7 +513,7 @@ const Pages = {
                   </div>
                   <div>
                     <h4>Working Hours</h4>
-                    <p>Mon–Sat: 8:00 AM – 8:00 PM<br/>Sunday: Emergency Only</p>
+                    <p>Mon–Sat: 9:00 AM – 6:00 PM<br/>Sunday: Emergency Only</p>
                   </div>
                 </div>
               </div>
